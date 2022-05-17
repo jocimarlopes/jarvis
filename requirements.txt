@@ -1,0 +1,6 @@
+speechRecognition
+gtts
+playsound
+wikipedia
+boto3
+catt
