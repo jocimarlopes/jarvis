@@ -4,3 +4,9 @@ playsound
 wikipedia
 boto3
 catt
+spotify-cli
+sqlite3
+beautifulsoup4
+requests
+psutil
+pyfutebol

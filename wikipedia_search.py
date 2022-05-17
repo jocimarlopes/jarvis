@@ -14,6 +14,7 @@ frases = [
     'quais foram ',
     'qual é ',
     'qual foi ',
+    'sobre '
 ]
 
 def get_wiki(data):
