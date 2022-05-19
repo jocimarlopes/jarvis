@@ -7,14 +7,16 @@ from tempfile import gettempdir
 from playsound import playsound
 from gtts import gTTS
 
-def new_text_to_audio(data):
+#Voz gratuita do Google Services
+def text_to_audio(data):
     audio = gTTS(text=data, lang='pt', slow=False)
     audio.save("speech.mp3")
     output = os.path.join("", "speech.mp3")
     playsound(output)
     return
 
-def text_to_audio(data):
+#Voz do Jarvis que usei pelo Polly AWS
+def aws_text_to_audio(data):
     """ new_text_to_audio(data) """
     session = Session(profile_name="default")
     polly = session.client("polly")

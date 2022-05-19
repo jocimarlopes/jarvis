@@ -16,24 +16,14 @@ def init():
         #battery.battery()
         text = (speech.ouvir_microfone()).lower()
         if "jarvis " in text:
-            n = False
             text = text.replace("jarvis ", "")
             try:
                 neural(text)
                 text = ""
             except:
+                text = ''
                 polly_aws.text_to_audio("Desculpe, não entendi, senhor.")
-def conscious(text):
-    """ 
-    A base da consciência seria o 
-    estímulo pessoal (id) e 
-    também do ambiente fora (ego)
-    
-    ID, 
-    SUPEREGO, 
-    EGO 
-    """
-    print(text)
+
 
 def neural(text):
     waiting = False

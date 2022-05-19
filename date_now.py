@@ -34,11 +34,16 @@ def get_hour():
     d = y[1].split('.')
     hora = d[0].split(':')
 
+    if '00' in hora[0]:
+        print(hora)
+        return polly_aws.text_to_audio(
+            "Agora são meia noite e {} minutos, senhor.".format(int(hora[1])))
+        
     if '01' in hora[0]:
-        polly_aws.text_to_audio(
+        return polly_aws.text_to_audio(
             "Agora são {} hora e {} minutos, senhor.".format(int(hora[0]), int(hora[1])))
     else:
-        polly_aws.text_to_audio(
+        return polly_aws.text_to_audio(
             "Agora são {} horas e {} minutos, senhor.".format(int(hora[0]), int(hora[1])))
 
 

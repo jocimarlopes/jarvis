@@ -10,6 +10,10 @@ PRINCIPAL = 'https://ondebaixa.com/index.php?s='
 
 frases_movies = [
     "baixe o filme ",
+    "baixe o filme do ",
+    "baixe o filme da ",
+    "baixa o filme do ",
+    "baixa o filme da ",
     "baixar o filme ",
     "baixar filme ",
     "baixa filme ",
@@ -21,9 +25,9 @@ frases_movies = [
     "baixa último filme ",
     "baixe último filme ",
     "baixe o último filme do ",
-    "baixa o último filme do ",
+    "baixa o ultimo filme do ",
     "baixe o último filme do ",
-    "baixa o último filme do ",
+    "baixa o ultimo filme do ",
     "baixe último filme do ",
     "baixa último filme do "
 ]
@@ -35,6 +39,7 @@ frases_series = [
 
 
 def run(args):
+    print(args)
     i = 1
     go = PRINCIPAL + args
 
@@ -80,9 +85,11 @@ def run(args):
 def download_movie(text):
     for item in frases_movies:
         if item in text:
+            print(item)
             polly_aws.text_to_audio(
                 "Ok senhor, estou pesquisando na internet.")
-            run(text.replace(item, ""))
+            text = text.replace(item, "")
+            run(text)
             return True
     for item in frases_series:
         if item in text:
