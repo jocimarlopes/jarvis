@@ -20,9 +20,12 @@ frases = {
         'que horas são',
         'que hora é',
         'horas por favor',
+        'que hora são',
+        'horas',
     ],
     'date': [
         'que dia é',
+        'que dia é hoje',
         'qual a data',
         'qual dia é'
     ]
