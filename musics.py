@@ -15,11 +15,11 @@ frases_play = [
 frases_pause = [
     'pause',
     'pausar música',
+    'pause a música',
     'parar música',
     'parar música',
     'pare a música'
 ]
-
 
 def play_music(frase):
     frase = frase.replace("'", "")
@@ -29,7 +29,6 @@ def play_music(frase):
             polly_aws.text_to_audio("Pronto, Senhor! Está tocando...")
             return True
     return False
-
 
 def pause_music(frase):
     for item in frases_pause:
@@ -42,3 +41,7 @@ def pause_music(frase):
                 polly_aws.text_to_audio(
                     "Desculpe senhor, acho que não tem música tocando.")
     return False
+
+def do_music(frase):
+    play_music(frase)
+    pause_music(frase)

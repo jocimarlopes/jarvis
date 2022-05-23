@@ -17,34 +17,32 @@ def init():
         text = (speech.ouvir_microfone()).lower()
         if "jarvis " in text:
             text = text.replace("jarvis ", "")
-            try:
-                neural(text)
-                text = ""
-            except:
-                text = ''
-                polly_aws.text_to_audio("Desculpe, não entendi, senhor.")
+            neural(text)
+            text = ""
+        if " jarvis" in text:
+            text = text.replace(" jarvis", "")
+            neural(text)
+            text = ""
 
 
 def neural(text):
     waiting = False
     if text:
-        waiting = True
-        send_sms.send(text)
-        learning.learn_now(text)
-        learning.search_in_memory(text)
-        calculator.calculate_now(text)
-        battery.get_battery(text)
-        date_now.dates(text)
-        temperatura.weather(text)
-        movies.download_movie(text)
-        musics.pause_music(text)
-        musics.play_music(text)
-        wikipedia_search.wiki_search(text)
-    else:
-        if waiting:
-            polly_aws.text_to_audio(
-                "Por favor senhor, quando me chamar já diga o que precisa.")
-            waiting = False
+        try:
+            waiting = True
+            send_sms.send(text)
+            learning.learn_now(text)
+            learning.search_in_memory(text)
+            calculator.calculate_now(text)
+            battery.get_battery(text)
+            date_now.dates(text)
+            temperatura.weather(text)
+            movies.download_movie(text)
+            musics.do_music(text)
+            wikipedia_search.wiki_search(text)
+        except:
+            text = ''
+            polly_aws.text_to_audio("Desculpe, não entendi, senhor.")
 
 
 init()

@@ -26,10 +26,10 @@ frases = {
     ]
 }
 
-def to_learn(eu, jarvis):
+def to_learn(me, jarvis):
     try:
         cur.execute("INSERT INTO learning VALUES ('{}', '{}')".format(
-            eu.lower(), jarvis.lower()
+            me.lower(), jarvis.lower()
         ))
         con.commit()
         polly_aws.text_to_audio("Está salvo na memória, senhor.")

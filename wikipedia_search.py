@@ -19,7 +19,8 @@ frases = [
 
 def get_wiki(data):
     try:
-        return polly_aws.text_to_audio(wikipedia.summary(data, sentences=3))
+        response = wikipedia.summary(data, sentences=3)
+        return polly_aws.text_to_audio(response)
     except Exception as e:
         print(e)
 

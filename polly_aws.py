@@ -7,7 +7,7 @@ from tempfile import gettempdir
 from playsound import playsound
 from gtts import gTTS
 
-#Voz gratuita do Google Services
+#Google Text-to-Speech
 def text_to_audio(data):
     audio = gTTS(text=data, lang='pt', slow=False)
     audio.save("speech.mp3")
@@ -15,9 +15,8 @@ def text_to_audio(data):
     playsound(output)
     return
 
-#Voz do Jarvis que usei pelo Polly AWS
-def aws_text_to_audio(data):
-    """ new_text_to_audio(data) """
+#Amazon Polly (AWS)
+""" def text_to_audio(data):
     session = Session(profile_name="default")
     polly = session.client("polly")
     try:
@@ -53,4 +52,4 @@ def aws_text_to_audio(data):
         # The following works on macOS and Linux. (Darwin = mac, xdg-open = linux).
         playsound(output)
         return
-    
+     """
