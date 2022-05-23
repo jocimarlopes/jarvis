@@ -17,7 +17,7 @@ Atualmente ele tem poucas funções, mas irá ser atualizado assim que tiver mel
 - Se perguntar, ele avisa o nível da bateria
 - Baixa filmes por torrent (Precisa ter o WebTorrent CLI previamente instalado)
 - Reproduz/Pausa músicas que estão sendo tocadas no Spotify conectado (precisa configurar o Spotify no notebook).
-- Ele pesquisa no Wikipédia, só falar "Jarvis, pesquise ASSUNTO"
+- Ele pesquisa no Wikipédia, só falar "Jarvis, pesquise SOBRE_X_ASSUNTO"
 
 ## Configurando (Linux Ubuntu)
 
