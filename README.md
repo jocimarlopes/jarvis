@@ -24,6 +24,7 @@ Atualmente ele tem poucas funções, mas irá ser atualizado assim que tiver mel
 Primeiro você precisará instalar alguns programas para que o Jarvis rode perfeitamente (ainda quero configurar nível Shell, mas por enquanto bora de tutorial), os programas são:
 - Instale a versão mais atual do Python 3, rode esse comando `sudo apt install python3.8`
 - Rode o comando `sudo apt install nodejs` para instalar o NodeJS.
+- Rode também o comando `sudo apt-get install portaudio19-dev` para instalar a Lib que faz funcionar o Audio com Python.
 - [WebTorrent CLI](https://github.com/webtorrent/webtorrent-cli), ele é um pacode do NodeJS, para instalar rode o comando `npm install webtorrent-cli -g`
 - Agora você precisa acessar a pasta do projeto Jarvis e rodar o comando `pip3 install -r requirements.txt` isso instalará os pacotes Python necessários.
 - Para escutar e pausar músicas você precisa configurar o Spotify CLI no seu Linux, siga [esse tutorial](https://pypi.org/project/spotify-cli/).
