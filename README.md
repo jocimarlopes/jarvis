@@ -1,4 +1,4 @@
-# Jarvis - Assitente Pessoal
+# Jarvis - Assistente Pessoal
 
 Olá, tudo bem? **Jarvis** é um Assistente Pessoal desenvolvido com o intuito de aprender Machine Learning e também estudar um pouco de Python.
 
