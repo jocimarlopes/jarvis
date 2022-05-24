@@ -104,4 +104,3 @@ def connectDevice(text):
 def run(text):
     connectDevice(text)
     findDevices(text)
-run('connect no celular jocimar lopes')
