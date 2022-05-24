@@ -1,4 +1,4 @@
-""" import cv2
+import cv2
 import mediapipe as mp
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -36,12 +36,12 @@ with mp_face_mesh.FaceMesh(
     cv2.imshow('Tela de Rosto', cv2.flip(image, 1))
     if cv2.waitKey(5) & 0xFF == 27:
       break
-cap.release() """
+cap.release()
 
-from imutils import face_utils
+""" from imutils import face_utils
 import dlib
 import cv2
- 
+
 # initialize dlib's face detector (HOG-based) and then create
 # the facial landmark predictor
 p = "shapes/shape_predictor_68_face_landmarks.dat"
@@ -80,3 +80,4 @@ while True:
 
 cv2.destroyAllWindows()
 cap.release()
+ """

@@ -9,6 +9,7 @@ import musics
 import calculator
 import send_sms
 import battery
+import bluetooth_connection
 
 
 def init():
@@ -29,10 +30,12 @@ def neural(text):
     waiting = False
     if text:
         try:
+            print(text)
             waiting = True
             send_sms.send(text)
             learning.learn_now(text)
             learning.search_in_memory(text)
+            bluetooth_connection.run(text)
             calculator.calculate_now(text)
             battery.get_battery(text)
             date_now.dates(text)
@@ -40,7 +43,8 @@ def neural(text):
             movies.download_movie(text)
             musics.do_music(text)
             wikipedia_search.wiki_search(text)
-        except:
+        except Exception as e:
+            print(e)
             text = ''
             polly_aws.text_to_audio("Desculpe, não entendi, senhor.")
 
