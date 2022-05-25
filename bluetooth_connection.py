@@ -42,6 +42,9 @@ find = [
     'lista o dispositivo',
     'liste o dispositivo',
     'liste os dispositivos',
+    'buscar dispositivos',
+    'busque dispositivos',
+    'busque os dispositivos'
 ]
 
 def findingDevices():
