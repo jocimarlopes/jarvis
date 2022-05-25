@@ -32,9 +32,9 @@ def to_learn(me, jarvis):
             me.lower(), jarvis.lower()
         ))
         con.commit()
-        polly_aws.text_to_audio("Está salvo na memória, senhor.")
+        polly_aws.text_to_audio("Está salvo na memória senhor.")
     except Exception as e:
-        polly_aws.text_to_audio("Desculpe senhor, não consegui salvar na memória dessa vez.")
+        polly_aws.text_to_audio("Desculpe senhor não consegui salvar na memória.")
 
 def search_in_memory(frase):
     try:

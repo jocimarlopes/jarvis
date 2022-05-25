@@ -26,7 +26,7 @@ def play_music(frase):
     for item in frases_play:
         if item in frase:
             os.popen("spotify play " + frase.replace(item, ""))
-            polly_aws.text_to_audio("Pronto, Senhor! Está tocando...")
+            polly_aws.text_to_audio("Pronto senhor, está tocando...")
             return True
     return False
 

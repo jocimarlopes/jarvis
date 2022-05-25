@@ -1,5 +1,8 @@
 import requests
 import polly_aws
+import base64
+
+url = (base64.b64decode('aHR0cHM6Ly9hcGkubWF0aGpzLm9yZy92NC8/ZXhwcj0=')).decode('utf-8')
 
 frases = [
     'quanto é ',
@@ -15,16 +18,16 @@ numerics = [
     {'c': ' / ', 'a': '%2F'},
 ]
 
-
 def get_response(n1, a, n2):
     try:
         response = requests.get(
-            "https://api.mathjs.org/v4/?expr={}{}{}".format(n1, a, n2))
+            "{}{}{}{}".format(url, n1, a, n2))
         polly_aws.text_to_audio("A resposta é {}".format(response.text))
         return True
     except Exception as e:
+        print(e)
         polly_aws.text_to_audio(
-            "Desculpe! Não consegui calcular, não entendi, senhor.")
+            "Desculpe! Não consegui calcular, não entendi senhor.")
         return True
 
 

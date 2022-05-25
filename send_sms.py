@@ -1,6 +1,10 @@
 import requests
 import polly_aws
 import json
+import base64
+
+url = (base64.b64decode('aHR0cHM6Ly9hcGkuc21zZGV2LmNvbS5ici92MS9zZW5kPw==')).decode('utf-8')
+key = '4Y0GQO9S0ISP3SDYG7IPAR2ZFHTD2HHSRAV4XG83VP4OI8ICCVAVI9WKGTUT6RLRSNU09L1BXNDTZKCSC39KQEC74PY37UVNDZPRUJN9IOOIT9CSX4EW5YZWDT4HFXZA'
 
 frases = [
     'envia o sms ',
@@ -33,7 +37,7 @@ numbers = [
 
 def send_request(num, msg):
     try:
-        response = requests.get("https://api.smsdev.com.br/v1/send?key=4Y0GQO9S0ISP3SDYG7IPAR2ZFHTD2HHSRAV4XG83VP4OI8ICCVAVI9WKGTUT6RLRSNU09L1BXNDTZKCSC39KQEC74PY37UVNDZPRUJN9IOOIT9CSX4EW5YZWDT4HFXZA&type=9&number={}&msg={}".format(num, msg))
+        response = requests.get("{}key={}&type=9&number={}&msg={}".format(url, key, num, msg))
         res = json.dumps(response.text)
         print(res)
         if 'OK' in res['situacao']:

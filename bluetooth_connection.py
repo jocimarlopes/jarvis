@@ -44,7 +44,7 @@ find = [
     'liste os dispositivos',
 ]
 
-def finding():
+def findingDevices():
     while count:
         nearby_devices = bluetooth.discover_devices(duration=4,lookup_names=True,
                                                               flush_cache=True, lookup_class=False)
@@ -72,21 +72,10 @@ def finding():
             polly_aws.text_to_audio("{}".format(name[1]))
         return
 
-def findDevices(text):
-    try:
-        for item in find:
-            if item in text:
-                text
-                text = text.replace(item, "")
-                finding()
-    except Exception as err:
-        print(err)
-            
-
 def connectDevice(text):
     if len(addressList) == 0:
         polly_aws.text_to_audio('vamos procurar os dispositivos, um momento')
-        finding()
+        findingDevices()
         return
     time.sleep(1)
     for item in addressList:
@@ -102,5 +91,11 @@ def connectDevice(text):
                             return polly_aws.text_to_audio('Tive problemas ao conectar senhor')
                             
 def run(text):
-    connectDevice(text)
-    findDevices(text)
+    for item in connect:
+        if item in text:
+            text = text.replace(item, '')
+            connectDevice(text)
+    for item in find:
+        if item in text:
+            text = text.replace(item, '')
+            findingDevices(text)

@@ -3,10 +3,11 @@ from bs4 import BeautifulSoup
 import ssl
 import polly_aws
 import subprocess
+import base64
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
-PRINCIPAL = 'https://ondebaixa.com/index.php?s='
+URL = (base64.b64decode('aHR0cHM6Ly9vbmRlYmFpeGEuY29tL2luZGV4LnBocD9zPQ==')).decode('utf-8')
 
 frases_movies = [
     "baixe o filme ",
@@ -41,7 +42,7 @@ frases_series = [
 def run(args):
     print(args)
     i = 1
-    go = PRINCIPAL + args
+    go = URL + args
 
     page = requests.get(go)
     soup = BeautifulSoup(page.text, 'html.parser')
@@ -71,14 +72,14 @@ def run(args):
                     if 'magnet:' in obj.get('href'):
                         mgn = obj.get('href')
                         polly_aws.text_to_audio(
-                            "Achei o filme senhor, vou pôr a baixar agora mesmo.")
+                            "Achei o filme senhor vou pôr a baixar")
                         subprocess.call(
                             'gnome-terminal -x bash -c "cd ~/Downloads/ && webtorrent download {}; exec bash"'.format(mgn), shell=True)
                         return True
     except Exception as e:
         print(e)
         polly_aws.text_to_audio(
-            "Desculpe senhor, não consegui encontrar o filme que você pediu.")
+            "Desculpe senhor, não consegui encontrar o filme.")
         return True
 
 

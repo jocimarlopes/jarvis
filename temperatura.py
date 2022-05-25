@@ -1,20 +1,25 @@
 import requests
 import json
 import polly_aws
+import base64
 
-
-url = "https://api.hgbrasil.com/weather?key=e7cf1324&city_name=Osorio,RS"
+cidade = 'Osorio,RS'
+url = (base64.b64decode('aHR0cHM6Ly9hcGkuaGdicmFzaWwuY29tL3dlYXRoZXI/a2V5PWU3Y2YxMzI0JmNpdHlfbmFtZT0=')).decode('utf-8')
 
 frases = [
     'como está o tempo',
+    'como tá o tempo',
     'qual a temperatura',
     'quantos graus',
-    'como tá o tempo',
-    'e o tempo'
+    'e o tempo',
+    'tá frio',
+    'ta frio',
+    'tá calor',
+    'ta calor'
 ]
 
 def get_weather():
-    response = json.loads((requests.get(url)).text)
+    response = json.loads((requests.get('{}{}'.format(url, cidade))).text)
 
     temp = response['results']['temp']
     city = response['results']['city_name']
@@ -32,7 +37,7 @@ def get_weather():
     if temp <= 15 and temp > 9:
         retorno = "Tá frio hein, hoje faz {} graus em {}, prepare os casacos, senhor.".format(temp, city)
     if temp <= 9:
-        retorno = "Eu estou congelando! Hoje faz {} graus em {}, não saia nesse frio hein, senhor.".format(temp, city)
+        retorno = "Eu estou congelando! Hoje fazem {} graus em {}, não saia nesse frio hein, senhor.".format(temp, city)
     return polly_aws.text_to_audio(retorno)
 
 

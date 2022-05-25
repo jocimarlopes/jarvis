@@ -48,5 +48,5 @@ def neural(text):
             text = ''
             polly_aws.text_to_audio("Desculpe, não entendi, senhor.")
 
-
-init()
+if __name__ == "__main__":
+    init()

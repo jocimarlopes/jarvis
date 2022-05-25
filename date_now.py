@@ -40,14 +40,14 @@ def get_hour():
     if '00' in hora[0]:
         print(hora)
         return polly_aws.text_to_audio(
-            "Agora são meia noite e {} minutos, senhor.".format(int(hora[1])))
+            "Agora são meia noite e {}, senhor.".format(int(hora[1])))
         
     if '01' in hora[0]:
         return polly_aws.text_to_audio(
-            "Agora são {} hora e {} minutos, senhor.".format(int(hora[0]), int(hora[1])))
+            "Agora são {} hora e {}, senhor.".format(int(hora[0]), int(hora[1])))
     else:
         return polly_aws.text_to_audio(
-            "Agora são {} horas e {} minutos, senhor.".format(int(hora[0]), int(hora[1])))
+            "Agora são {} horas e {}, senhor.".format(int(hora[0]), int(hora[1])))
 
 
 def get_date():

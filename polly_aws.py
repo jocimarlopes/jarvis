@@ -6,13 +6,16 @@ import sys
 from tempfile import gettempdir
 from playsound import playsound
 from gtts import gTTS
+from time import sleep
 
 #Google Text-to-Speech
 def text_to_audio(data):
     audio = gTTS(text=data, lang='pt', slow=False)
-    audio.save("speech.mp3")
-    output = os.path.join("", "speech.mp3")
+    audio.save("voice.mp3")
+    output = os.path.join("", "voice.mp3")
     playsound(output)
+    sleep(0.5)
+    os.remove('voice.mp3')
     return
 
 #Amazon Polly (AWS)
