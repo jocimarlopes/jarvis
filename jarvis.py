@@ -30,7 +30,6 @@ def neural(text):
     waiting = False
     if text:
         try:
-            print(text)
             waiting = True
             send_sms.send(text)
             learning.learn_now(text)

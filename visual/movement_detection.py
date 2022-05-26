@@ -4,7 +4,6 @@ import datetime
 import imutils
 import time
 import cv2
-import polly_aws
 from threading import Thread
 
 
@@ -76,7 +75,7 @@ while True:
 	key = cv2.waitKey(1) & 0xFF
 	# if the `q` key is pressed, break from the lop
 	if text == "Occupied":
-		polly_aws.text_to_audio('Senhor, parece que tem movimento.')
+		print("Movimento detectado")
 
 
 # cleanup the camera and close any open windows
