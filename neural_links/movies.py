@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import ssl
-import polly_aws
+from neural_links import polly_aws
 import subprocess
 import base64
 

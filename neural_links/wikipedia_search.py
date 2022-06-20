@@ -1,21 +1,21 @@
 import wikipedia
-import polly_aws
+from neural_links import polly_aws
 
 wikipedia.set_lang('pt')
 
-frases = [
-    'quem é ',
-    'quem foi ',
-    'quem foram ',
-    'o que é ',
-    'o que são ',
-    'o que foram ',
-    'quais são ',
-    'quais foram ',
-    'qual é ',
-    'qual foi ',
-    'sobre '
-]
+frases = {
+    0:'quem é ',
+    1:'quem foi ',
+    2:'quem foram ',
+    3:'o que é ',
+    4:'o que são ',
+    5:'o que foram ',
+    6:'quais são ',
+    7:'quais foram ',
+    8:'qual é ',
+    9:'qual foi ',
+    10:'sobre '
+}
 
 def get_wiki(data):
     try:
@@ -29,6 +29,6 @@ def wiki_search(frase):
     if "pesquise " in frase:
         frase = frase.replace("pesquise ", "")
         for item in frases:
-            if item in frase:
+            if frases.get(item) in frase:
                 get_wiki(frase.split(item))
                 return True

@@ -1,15 +1,15 @@
-import speech
-import wikipedia_search
-import polly_aws
-import movies
-import learning
-import date_now
-import temperatura
-import musics
-import calculator
-import send_sms
-import battery
-import bluetooth_connection
+from neural_links import speech
+from neural_links import wikipedia_search
+from neural_links import polly_aws
+from neural_links import movies
+from neural_links import learning
+from neural_links import date_now
+from neural_links import temperatura
+from neural_links import musics
+from neural_links import calculator
+from neural_links import send_sms
+from neural_links import battery
+from neural_links import bluetooth_connection
 
 
 def init():

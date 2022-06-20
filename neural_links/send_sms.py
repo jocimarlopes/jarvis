@@ -1,5 +1,5 @@
 import requests
-import polly_aws
+from neural_links import polly_aws
 import json
 import base64
 
@@ -27,12 +27,12 @@ send_to = [
     ' pra ',
     ' para '
 ]
-numbers = [
-    {'nome': 'júnior', 'numero': '51995381895'},
-    {'nome': 'gustavo', 'numero': '51996807320'},
-    {'nome': 'maikelen', 'numero': '51980418444'},
-    {'nome': 'mãe', 'numero': '51999806583'}
-]
+numbers = {
+    'NAME': 'DDD+NUMBER',
+    'NAME': 'DDD+NUMBER',
+    'NAME': 'DDD+NUMBER',
+    'NAME': 'DDD+NUMBER'
+}
 
 
 def send_request(num, msg):
@@ -62,9 +62,7 @@ def send(text):
             for to in send_to:
                 if to in text:
                     t = text.split(to)
-            print(t)
-            for phone in numbers:
-                if t[1] in phone['nome']:
-                    t[1] = phone['numero']
-            print(t)
+            for item in numbers:
+                if t[1] in item:
+                    t[1] = numbers[item]
             send_request(t[1], t[0])

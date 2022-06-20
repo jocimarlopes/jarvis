@@ -1,5 +1,5 @@
 import sqlite3
-import polly_aws
+from neural_links import polly_aws
 
 con = sqlite3.connect('database/database.db', check_same_thread=False)
 cur = con.cursor()

@@ -22,20 +22,18 @@ Atualmente ele tem poucas funções, mas irá ser atualizado assim que tiver mel
 
 ## Configurando (Linux Ubuntu)
 
-Primeiro você precisará instalar alguns programas para que o Jarvis rode perfeitamente (ainda quero configurar nível Shell, mas por enquanto bora de tutorial), os programas são:
-- Instale a versão mais atual do Python 3, rode esse comando `sudo apt install python3.8`
-- Rode o comando `sudo apt install nodejs` para instalar o NodeJS.
-- Rode também o comando `sudo apt-get install portaudio19-dev` para instalar a Lib que faz funcionar o Audio com Python.
-- [WebTorrent CLI](https://github.com/webtorrent/webtorrent-cli), ele é um pacode do NodeJS, para instalar rode o comando `npm install webtorrent-cli -g`
-- Agora você precisa acessar a pasta do projeto Jarvis e rodar o comando `pip3 install -r requirements.txt` isso instalará os pacotes Python necessários.
-- Para escutar e pausar músicas você precisa configurar o Spotify CLI no seu Linux, siga [esse tutorial](https://pypi.org/project/spotify-cli/).
+Dentro do diretório do projeto Assistente Pessoal você vai fazer:
+- Instale a versão mais atual do Python 3, rode esse comando `sudo apt install python3`
+- Rode o arquivo *config.py* dentro da pasta do projeto com o comando `python3 config.py`
+- Aguarde a configuração concluir.
 
-- E depois de configurar tudo, caso você queira usar a voz masculina da Amazon (Você precisa trocar a função no arquivo "`./polly_aws.py`"), você precisa usar uma conta AWS da Amazon para usar o Amazon Polly, que faz as respostas do Jarvis, que são em texto, responder através da voz, siga [esse tutorial de configuração](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html#configuration) (Infelizmente não posso deixar minha conta AWS pré-configurada, mas é grátis por 1 ano, configure a sua e seja feliz). Caso queira testar com a voz gratuita do Google Texto-to-Speech.
+- Caso você queira escutar e pausar músicas você precisa configurar o Spotify CLI no seu Linux, siga [esse tutorial](https://pypi.org/project/spotify-cli/).
+
 
 ## Rodando o Jarvis 
 Primeiramente tenha certeza de que está tudo configurado conforme o tutorial acima.
 Abra o Terminal e acesse a pasta do Projeto Jarvis, após isso digite no Terminal:
-`python3 jarvis.py`
+`python3 start.py`
 Aparecerá no Terminal a frase `Fale agora`, só perguntar o que deseja e aguardar ele responder.
 
 ## Nota

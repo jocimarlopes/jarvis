@@ -1,5 +1,5 @@
 import bluetooth, subprocess
-import polly_aws
+from neural_links import polly_aws
 import time
 
 count = True
@@ -20,7 +20,8 @@ connect = [
     'conecta no celular',
     'conectar no celular ',
     'connect no celular ',
-    'conecta no bluetooth'
+    'conecta no bluetooth',
+    'conecte no bluetooth'
 ]
 
 find = [
@@ -101,4 +102,4 @@ def run(text):
     for item in find:
         if item in text:
             text = text.replace(item, '')
-            findingDevices(text)
+            findingDevices()

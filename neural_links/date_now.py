@@ -1,20 +1,20 @@
 import datetime
-import polly_aws
+from neural_links import polly_aws
 
-months = [
-    {"number": '01', "name": "Janeiro"},
-    {"number": '02', "name": "Fevereiro"},
-    {"number": '03', "name": "Março"},
-    {"number": '04', "name": "Abril"},
-    {"number": '05', "name": "Maio"},
-    {"number": '06', "name": "Junho"},
-    {"number": '07', "name": "Julho"},
-    {"number": '08', "name": "Agosto"},
-    {"number": '09', "name": "Setembro"},
-    {"number": '10', "name": "Outubro"},
-    {"number": '11', "name": "Novembro"},
-    {"number": '12', "name": "Dezembro"},
-]
+months = {
+    '01' : "Janeiro",
+    '02' : "Fevereiro",
+    '03' : "Março",
+    '04' : "Abril",
+    '05' : "Maio",
+    '06' : "Junho",
+    '07' : "Julho",
+    '08' : "Agosto",
+    '09' : "Setembro",
+    '10' : "Outubro",
+    '11' : "Novembro",
+    '12' : "Dezembro",
+}
 frases = {
     'hour': [
         'que horas são',

@@ -1,5 +1,5 @@
 import os
-import polly_aws
+from neural_links import polly_aws
 
 frases_play = [
     'play',

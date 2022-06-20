@@ -1,5 +1,5 @@
 import requests
-import polly_aws
+from neural_links import polly_aws
 import base64
 
 url = (base64.b64decode('aHR0cHM6Ly9hcGkubWF0aGpzLm9yZy92NC8/ZXhwcj0=')).decode('utf-8')

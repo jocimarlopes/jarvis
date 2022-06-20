@@ -1,3 +1,4 @@
+from asyncore import poll
 from imutils.video import VideoStream
 import argparse
 import datetime
@@ -5,6 +6,7 @@ import imutils
 import time
 import cv2
 from threading import Thread
+from jarvis from neural_links import polly_aws
 
 
 # construct the argument parser and parse the arguments
@@ -76,6 +78,7 @@ while True:
 	# if the `q` key is pressed, break from the lop
 	if text == "Occupied":
 		print("Movimento detectado")
+		polly_aws.text_to_audio('Movimento detectado senhor')
 
 
 # cleanup the camera and close any open windows
