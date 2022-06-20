@@ -34,7 +34,8 @@ Dentro do diretório do projeto Assistente Pessoal você vai fazer:
 Primeiramente tenha certeza de que está tudo configurado conforme o tutorial acima.
 Abra o Terminal e acesse a pasta do Projeto Jarvis, após isso digite no Terminal:
 `python3 start.py`
-Aparecerá no Terminal a frase `Fale agora`, só perguntar o que deseja e aguardar ele responder.
+Aparecerá no Terminal a frase `Fale agora`, só perguntar o que deseja e aguardar ele responder, fale assim:
+**Jarvis quais as leis da robótica**
 
 ## Nota
 
