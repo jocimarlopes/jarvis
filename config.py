@@ -27,7 +27,7 @@ def verify_app(command, app_name, install):
         os.system('sudo apt install {}'.format(install))
 
 def config_spotify():
-    print('Now you just need to configure a Spotify Account to the James..')
+    print('Now you just need to configure a Spotify Account to the Jarvis..')
     os.system('spotify auth login')
 
 if __name__ == '__main__':
@@ -36,7 +36,7 @@ if __name__ == '__main__':
             verify_app(verif[0], verif[1], verif[2])
         print('======\nNow installing pip requirements..')
         os.system('pip3 install -r requirements.txt')
-        config_spotify()
+        #config_spotify()
         print('\n\nJarvis configurado com sucesso! Pressione qualquer tecla para continuar')
     else:
         print('Jarvis only works in Linux machine, sorry.')
